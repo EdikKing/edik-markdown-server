@@ -13,12 +13,12 @@ WORKDIR /home/app
 # For npm@5 or later, copy package-lock.json as well
 # COPY package.json package-lock.json ./
 
-COPY /node_modules /home/app/node_modules
+#COPY /node_modules /home/app/node_modules
 COPY /lib /home/app/lib
 COPY /index.js /home/app/index.js
 COPY /package.json /home/app/package.json
 
-#RUN npm install --only=production
+RUN npm install --only=production
 # If you are building your code for production
 # RUN npm install --registry=https://registry.npm.taobao.org
 
